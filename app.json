@@ -1,0 +1,13 @@
+{
+  "pages": [ 
+    "pages/transition/transition",
+    "pages/login/login",
+    "pages/bind/bind",
+    "pages/clause/clause"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTextStyle": "white"
+  }
+}

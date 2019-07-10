@@ -1,0 +1,6 @@
+<!--pages/clause/clause.wxml-->
+<import src="/libs/wxParse/wxParse.wxml" />
+<view class='border-box padding-lr-30 padding-tb-30'>
+    <template is='wxParse' data='{{wxParseData:article.nodes}}'></template>
+</view>
+

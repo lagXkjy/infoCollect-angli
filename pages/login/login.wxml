@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view class='bg-image-box'>
+    <image class='bg-image block' mode='widthFix' src="{{bgImage}}" loazy-load='{{true}}' />
+</view>
+<view class='content flex align-center justify-end flex-direction'>
+    <button open-type='getPhoneNumber' bindgetphonenumber='getPhoneMumber' class='login my-btn border-box white-color font-32 flex justify-center align-center margin-b-30'>
+        <image class='wechat block' mode='widthFix' src="/images/wechat.png" />
+        <text>微信登录</text>
+    </button>
+    <view class='clause white-color flex justify-center align-center font-26'>
+        <view bindtap="changeClause" class='clause-change border-box flex justify-center align-center'>
+            <image hidden='{{!clause}}' class='clause-image' mode='widthFix' src="/images/yes.png" />
+        </view>
+        <text class='clause-declare'>我已阅读并接受</text>
+        <text bindtap='toClause' class='clause-url'>隐私政策</text>
+    </view>
+</view>

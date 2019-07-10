@@ -1,0 +1,119 @@
+<!--pages/bind/bind.wxml-->
+<image lazy-load class='banner' mode='widthFix' src="{{banner}}" />
+<view class='title-box border-box'>
+    <view class='title font-32 border-box'>
+        科学实验·模型构建·趣味数学·机器人编程
+    </view>
+</view>
+<view class='info border-box white-bg'>
+    <!-- <view class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-center'>
+        <view class='info-key'>
+            手机号：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{info.phone}}'>{{info.phone}}</text>
+            <input wx:else bindinput='inputPhone' cursor-spacing='30' value='{{info.phone}}' class='info-input border-box' maxlength='11' type="number" placeholder="请输入手机号" placeholder-class='gray' /> 
+        </view>
+    </view> -->
+    <view class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-center'>
+        <view class='info-key'>
+            学生姓名：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{userId}}'>{{info.name}}</text>
+            <input wx:else bindinput='inputName' cursor-spacing='30' class='info-input border-box' type="text" placeholder="请输入学生姓名" placeholder-class='gray' />
+        </view>
+    </view>
+   <!-- <view class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-center'>
+        <view class='info-key'>
+            年龄：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{userId}}'>{{info.age}}</text>
+            <input wx:else bindinput='inputAge' cursor-spacing='30' class='info-input border-box' type="number" placeholder="请输入年龄"  placeholder-class='gray'/>
+        </view>
+    </view> -->
+    <view class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-center'>
+        <view class='info-key'>
+            年级：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{userId}}'>{{info.gradeValue}}</text>
+            <picker wx:else mode="selector" range="{{grade}}" value="{{gradeIndex}}" bindchange="gradeChange">
+                <view class='flex justify-between align-center'>
+                    <text wx:if='{{gradeIndex  === -1}}' class='gray'>请选择年级</text>
+                    <text wx:else>{{grade[gradeIndex]}}</text>
+                    <image mode='widthFix' class='info-right-image' src="/images/right.png" />
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view wx:if='{{type !== "city"}}' class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-center'>
+        <view class='info-key'>
+            城市：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{userId}}'>{{info.cityValue}}</text>
+            <picker wx:else mode="selector" range="{{city}}" range-key='CityName' value="{{cityIndex}}" bindchange="cityChange">
+                <view class='flex justify-between align-center'>
+                    <text wx:if='{{cityIndex === -1}}' class='gray'>请选择城市</text>
+                    <text wx:else>{{city[cityIndex].CityName}}</text>
+                    <image mode='widthFix' class='info-right-image' src="/images/right.png" />
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-center'>
+        <view class='info-key'>
+            昂立STEM中心：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{userId}}'>{{info.STEMValue}}</text>
+            <picker wx:else mode="selector" range="{{STEM}}" range-key='CoreName' value="{{STEMIndex}}" bindchange="STEMChange">
+                <view class='flex justify-between align-center'>
+                    <text wx:if='{{STEMIndex === -1}}' class='gray'>请选择中心</text>
+                    <text wx:else>{{STEM[STEMIndex].CoreName}}</text>
+                    <image mode='widthFix' class='info-right-image' src="/images/right.png" />
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view wx:if='{{info.inviteValue !== -1}}' class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-center'>
+        <view class='info-key'>
+            邀请码：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{userId}}'>{{info.inviteValue}}</text>
+            <picker wx:else mode="selector" range="{{inviteCode}}" value="{{inviteCodeIndex}}" bindchange="inviteCodeChange">
+                <view class='flex justify-between align-center'>
+                    <text wx:if='{{inviteCodeIndex === -1}}' class='gray'>请选择邀请码</text>
+                    <text wx:else>{{inviteCode[inviteCodeIndex]}}</text>
+                    <image mode='widthFix' class='info-right-image' src="/images/right.png" />
+                </view>
+            </picker>
+        </view>
+    </view>
+   <!-- <view class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-start'>
+        <view class='info-key'>
+            地址：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{userId}}'>{{info.address}}</text>
+            <input wx:else bindinput='inputAddress' cursor-spacing='30' value='{{info.address}}' class='info-input border-box' type="text" placeholder="请输入地址"  placeholder-class='gray'/>
+        </view>
+    </view> -->
+    <view :hidden='{{userId && !info.remarksValue}}' class='info-list border-box padding-lr-30 padding-tb-40 font-28 flex align-start'>
+        <view class='info-key'>
+            备注：
+        </view>
+        <view class='info-value border-box'>
+            <text wx:if='{{userId}}'>{{info.remarksValue}}</text>
+            <input wx:else bindinput='inputRenarks' cursor-spacing='30' class='info-input border-box' type="text" placeholder="请填写备注（选填）"  placeholder-class='gray'/>
+        </view>
+    </view> 
+</view>
+<view class='btn-box padding-lr-30 border-box'>
+    <button wx:if='{{userId}}' class='submit submit-end my-btn white-color font-34 font-weight flex justify-center align-center margin-b-30'>预约成功</button>
+    <button wx:else open-type='getUserInfo' bindgetuserinfo='submitUseInfo' class='submit my-btn white-color font-34 font-weight flex justify-center align-center margin-b-30'>提交</button>
+</view>
+

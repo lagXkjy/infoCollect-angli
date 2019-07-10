@@ -1,0 +1,51 @@
+/* pages/bind/bind.wxss */
+page{
+    background: #f0f2f5;
+}
+.banner{
+    width: 100%;
+}
+.title-box{
+    padding: 36rpx 40rpx;
+}
+.title{
+    color: #ea5420;
+    border-left: 6rpx solid #ea5420;
+    padding-left: 22rpx;
+    line-height: 32rpx;
+}
+.info{
+    border-bottom: 1px solid #e0e0e0;
+    color: #171717;
+}
+.info-list{
+    border-top: 1px solid #e0e0e0;
+}
+.info-key{
+    width: 36%;
+}
+.info-value{
+    width: 64%;
+}
+.info-input{
+    width: 100%;
+    height: 28rpx;
+}
+.info-right-image{
+    width: 30rpx;
+}
+.btn-box{
+    margin-top: 50rpx;
+}
+.submit{
+    background: #ea5420;
+    border-radius: 8rpx;
+    width: 100%;
+    height: 90rpx;
+}
+.submit-end{
+    background: #a7a7a7;
+}
+.gray{
+    color: #808080;
+}

@@ -1,0 +1,45 @@
+/* pages/login/login.wxss */
+.bg-image-box{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.bg-image{
+    width: 100%;
+}
+.content{
+    position: absolute;
+    width: 100vW;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+.login{
+    background: #51aa38;
+    width: 92%;
+    height: 90rpx;
+    border-radius: 90rpx;
+}
+.wechat{
+    width: 58rpx;
+    margin-right: 16rpx;
+    line-height: 90rpx;
+}
+.clause{
+    margin-bottom: 90rpx;
+}
+.clause-change{
+    border: 1px solid #fff;
+    width: 26rpx;
+    height: 26rpx;
+}
+.clause-image{
+    width: 80%;
+    line-height: 26rpx;
+}
+.clause-declare{
+    margin: 0 13rpx;
+}
+.clause-url{
+    text-decoration:underline;
+}
